@@ -34,26 +34,6 @@ describe('Dropdown', () => {
   })
 
   describe('constructor', () => {
-    it('should add a listener on trigger which do not have data-bs-toggle="dropdown"', () => {
-      fixtureEl.innerHTML = [
-        '<div class="dropdown">',
-        '  <button class="btn">Dropdown</button>',
-        '  <div class="dropdown-menu">',
-        '    <a class="dropdown-item" href="#">Secondary link</a>',
-        '  </div>',
-        '</div>'
-      ].join('')
-
-      const btnDropdown = fixtureEl.querySelector('.btn')
-      const dropdown = new Dropdown(btnDropdown)
-
-      spyOn(dropdown, 'toggle')
-
-      btnDropdown.click()
-
-      expect(dropdown.toggle).toHaveBeenCalled()
-    })
-
     it('should allow to pass config to Popper with `popperConfig`', () => {
       fixtureEl.innerHTML = [
         '<div class="dropdown">',
